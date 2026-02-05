@@ -2,33 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LivXow</title>
-    <!-- Logo Preload for Faster Loading (CHANGED TO LOCAL FILE) -->
-    <link rel="preload" as="image" href="logo.jpg" fetchpriority="high">
+    <!-- Viewport: Zoom Disabled -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    
+    <!-- SEO Meta Tags -->
+    <title>LivXow - Global No.1 Live Sports Streaming App (v2.1)</title>
+    <meta name="description" content="Download LivXow APK v2.1. Watch live cricket, football, WWE, and global TV channels in Ultra HD. Free, Anti-Ban, and No Ads streaming app for Android.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://livxow.site/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://livxow.site/">
+    <meta property="og:title" content="LivXow - Global No.1 Live Sports App">
+    <meta property="og:description" content="Download LivXow APK. Watch Live Sports, Cricket & Football in HD with Zero Buffering.">
+    <!-- Using local image for OG if available, otherwise keeping external fallback -->
+    <meta property="og:image" content="https://i.ibb.co/6R9b0nm0/1000341018.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://livxow.site/">
+    <meta property="twitter:title" content="LivXow - Global No.1 Live Sports App">
+    <meta property="twitter:description" content="Download LivXow APK. Watch Live Sports, Cricket & Football in HD with Zero Buffering.">
+    <meta property="twitter:image" content="https://i.ibb.co/6R9b0nm0/1000341018.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
+    <!-- Preload Critical Assets -->
+    <link rel="preload" as="image" href="https://i.ibb.co/6R9b0nm0/1000341018.jpg" fetchpriority="high">
+    
+    <!-- Optimized Font Loading (Async) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Font Awesome (Non-blocking) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
     
     <style>
         /* ============ GLOBAL STYLES ============ */
-        body { background-color: #050505; color: #eeeeee; margin: 0; font-family: 'Poppins', sans-serif; text-align: center; }
-        * { box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body { background-color: #050505; color: #eeeeee; margin: 0; font-family: 'Poppins', sans-serif; text-align: center; overflow-x: hidden; }
+        * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 
         /* Navbar */
         .navbar { display: flex; align-items: center; justify-content: space-between; padding: 15px 20px; background: #0a0a0a; box-shadow: 0 4px 20px rgba(0,0,0,0.8); position: sticky; top: 0; z-index: 100; border-bottom: 1px solid rgba(255, 215, 0, 0.1); }
         .nav-brand { display: flex; align-items: center; gap: 12px; cursor: pointer; }
         .nav-logo-box { width: 45px; height: 45px; border-radius: 50%; overflow: hidden; background: linear-gradient(#000, #000) padding-box, linear-gradient(45deg, #FFD700, #B8860B) border-box; border: 2px solid transparent; box-shadow: 0 0 15px rgba(255, 215, 0, 0.2); display: flex; align-items: center; justify-content: center; }
-        /* CHANGED TO LOCAL FILE */
         .nav-logo-box img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.2) translateY(-5%); filter: drop-shadow(0 0 0.5px rgba(255, 255, 255, 0.8)) contrast(1.1); }
         .brand-name { font-size: 20px; font-weight: 700; letter-spacing: 0.5px; color: #fff; }
         .brand-name span { color: #FFD700; }
         
-        /* Container */
-        .container { max-width: 600px; margin: 0 auto; padding: 40px 20px; }
+        /* Container -> Main */
+        main { max-width: 600px; margin: 0 auto; padding: 40px 20px 0 20px; min-height: 80vh; }
+
+        /* Smooth Fade Animation */
+        .fade-in { animation: fadeIn 0.4s ease-in-out; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         /* ============ HOME SECTION STYLES ============ */
         .main-logo-box { width: 150px; height: 150px; border-radius: 50%; overflow: hidden; background: linear-gradient(#050505, #050505) padding-box, linear-gradient(45deg, #FFD700, #B8860B, #FFEA00, #DAA520) border-box; border: 3px solid transparent; box-shadow: 0 0 40px rgba(255, 215, 0, 0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 25px auto; }
-        /* CHANGED TO LOCAL FILE */
         .main-logo-img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.2) translateY(-5%); filter: drop-shadow(0 0 0.5px rgba(255, 255, 255, 0.8)) contrast(1.1); }
         h1 { font-size: 28px; line-height: 1.3; margin: 0 0 15px 0; font-weight: 700; }
         .highlight { color: #FFD700; }
@@ -37,8 +72,8 @@
         .meta-info span { display: flex; align-items: center; gap: 5px; background: #151515; padding: 6px 10px; border-radius: 6px; border: 1px solid #333; }
         .meta-info i { color: #3b82f6; }
         
-        .download-btn { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 12px 30px; font-size: 16px; font-weight: 600; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border: 1px solid #3b82f6; transition: 0.3s; min-width: 200px; cursor: pointer; }
-        .download-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(37, 99, 235, 0.5); }
+        .download-btn { background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 12px 30px; font-size: 16px; font-weight: 600; border-radius: 8px; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border: 1px solid #3b82f6; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); min-width: 200px; cursor: pointer; }
+        .download-btn:active { transform: scale(0.96); }
         
         .text-content { margin-top: 40px; text-align: left; padding: 0 10px; }
         .text-content p { color: #bbb; font-size: 14px; line-height: 1.7; margin-bottom: 20px; }
@@ -60,7 +95,7 @@
         .badge-ver { background: #222; padding: 2px 8px; border-radius: 4px; font-size: 12px; border: 1px solid #333; }
         .badge-free { background: rgba(76, 175, 80, 0.15); color: #4caf50; padding: 2px 8px; border-radius: 4px; font-size: 12px; }
         .btn-centered-blue { display: flex; align-items: center; justify-content: center; width: 100%; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 15px; border-radius: 10px; font-weight: 700; font-size: 16px; text-decoration: none; cursor: pointer; box-shadow: 0 5px 15px rgba(37, 99, 235, 0.4); transition: 0.3s; border: 1px solid #3b82f6; margin-top: 10px; }
-        .btn-centered-blue:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.6); }
+        .btn-centered-blue:active { transform: scale(0.98); }
 
         /* What's New */
         .wn-container { margin-top: 50px; text-align: left; }
@@ -86,12 +121,13 @@
         .hig-step-title { font-size: 16px; font-weight: 700; color: #FFD700; margin-bottom: 8px; }
         .hig-step-text { font-size: 14px; color: #ccc; line-height: 1.6; }
 
-        /* Explore Categories */
+        /* Explore Categories - UPDATED */
         .explore-section { margin-top: 50px; text-align: center; }
         .explore-title { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 15px; }
         .explore-desc { font-size: 14px; color: #aaa; margin-bottom: 30px; line-height: 1.6; padding: 0 10px; }
-        .explore-card { background: #111; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 400px; margin: 0 auto 30px auto; }
-        .explore-img { width: 100%; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin-bottom: 25px; border: 1px solid #333; }
+        .explore-card { background: #111; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 400px; margin: 0 auto 30px auto; transition: transform 0.3s ease; }
+        /* Added object-fit: cover to prevent image squashing */
+        .explore-img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin-bottom: 25px; border: 1px solid #333; aspect-ratio: 16/9; object-fit: cover; }
         .ec-title { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 15px; }
         .ec-text { font-size: 14px; color: #ccc; line-height: 1.6; text-align: left; }
 
@@ -163,30 +199,29 @@
         .stat-num { font-size: 32px; font-weight: 700; color: #ff5722; margin-bottom: 5px; }
         .stat-label { font-size: 14px; color: #888; }
 
-        /* === NEW FIXED FOOTER STYLES === */
-        footer { margin-top: 50px; padding: 40px 20px 30px 20px; background: #080808; border-top: 1px solid #222; width: 100%; box-sizing: border-box; }
+        /* === PREMIUM FOOTER STYLES === */
+        footer { margin-top: 60px; padding: 35px 20px 20px 20px; background: #080808; border-top: 1px solid #1a1a1a; width: 100%; box-sizing: border-box; }
         .footer-content { display: flex; flex-direction: column; align-items: center; text-align: center; width: 100%; max-width: 600px; margin: 0 auto; }
         
-        .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 25px; justify-content: center; }
-        .f-logo { width: 40px; height: 40px; border-radius: 50%; border: 1px solid #FFD700; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; }
-        /* CHANGED TO LOCAL FILE */
+        .footer-brand { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; justify-content: center; }
+        .f-logo { width: 35px; height: 35px; border-radius: 50%; border: 1px solid #FFD700; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #000; }
         .f-logo img { width: 100%; height: 100%; object-fit: cover; transform: scale(1.2) translateY(-5%); }
-        .f-brand-name { font-size: 20px; font-weight: 700; color: #fff; }
+        .f-brand-name { font-size: 18px; font-weight: 700; color: #fff; }
 
-        .footer-links-inline { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; margin: 0 0 25px 0; list-style: none; padding: 0; width: 100%; }
-        .footer-links-inline li { margin: 5px; }
-        .footer-links-inline li a { color: #ff5722; font-weight: 600; text-decoration: none; font-size: 14px; transition: 0.3s; }
-        .footer-links-inline li a:hover { color: #FFD700; text-decoration: underline; }
+        .footer-links-inline { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 0 0 20px 0; list-style: none; padding: 0; width: 100%; }
+        .footer-links-inline li { margin: 2px 5px; }
+        .footer-links-inline li a { color: #888; font-weight: 500; text-decoration: none; font-size: 13px; transition: 0.3s; }
+        .footer-links-inline li a:hover { color: #FFD700; }
 
-        .copyright { font-size: 13px; color: #777; margin-bottom: 20px; display: block; }
-        .social-icons { display: flex; gap: 15px; justify-content: center; width: 100%; }
-        .social-icons a { width: 40px; height: 40px; background: #1a1a1a; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; text-decoration: none; transition: 0.3s; border: 1px solid #333; }
+        .copyright { font-size: 12px; color: #555; margin-bottom: 15px; display: block; }
+        .social-icons { display: flex; gap: 12px; justify-content: center; width: 100%; }
+        .social-icons a { width: 36px; height: 36px; background: #111; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #888; text-decoration: none; transition: 0.3s; border: 1px solid #222; font-size: 14px; }
         .social-icons a:hover { background: #FFD700; color: #000; border-color: #FFD700; }
+        .social-icons a i { line-height: 1; }
 
 
         /* ============ DOWNLOAD PAGE SECTIONS ============ */
-        #download-section { display: none; animation: fadeIn 0.5s ease; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        #download-section { display: none; }
 
         .download-heading { font-size: 26px; margin-bottom: 10px; font-weight: 700; }
         .title-gold { color: #FFD700; }
@@ -201,7 +236,7 @@
         .card-sub { font-size: 13px; color: #888; margin-bottom: 25px; }
         /* Direct Download Link Here */
         .card-btn { display: block; background: linear-gradient(135deg, #2563eb, #1d4ed8); color: white; padding: 16px; border-radius: 10px; font-weight: 700; text-decoration: none; margin-bottom: 20px; box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3); border: 1px solid #3b82f6; transition: 0.3s; text-align: center; }
-        .card-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5); }
+        .card-btn:active { transform: scale(0.98); }
         .version-info { font-size: 13px; color: #aaa; margin-bottom: 25px; }
         .features-list { text-align: left; display: inline-block; margin: 0 auto; }
         .feature-item { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; font-size: 14px; color: #ccc; }
@@ -213,7 +248,6 @@
         .note-text { font-size: 14px; line-height: 1.6; }
         .install-white-card { background: #ffffff; border-radius: 20px; padding: 40px 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.5); text-align: center; color: #333; }
         .ig-main-icon { width: 80px; height: 80px; margin: 0 auto 15px auto; border-radius: 50%; border: 3px solid #FFD700; background: linear-gradient(45deg, #ff6b33, #FFD700); display: flex; align-items: center; justify-content: center; }
-        /* CHANGED TO LOCAL FILE */
         .ig-main-icon img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; opacity: 0.9; }
         .ig-heading { font-size: 24px; font-weight: 800; color: #d35400; line-height: 1.3; margin-bottom: 30px; }
         .step-row { display: flex; gap: 15px; margin-bottom: 15px; text-align: left; position: relative; }
@@ -244,20 +278,23 @@
 <body>
 
     <!-- Navbar -->
-    <nav class="navbar">
-        <div class="nav-brand" onclick="goHome()">
-            <div class="nav-logo-box"><img src="logo.jpg" alt="Logo" fetchpriority="high"></div>
+    <nav class="navbar" role="navigation" aria-label="Main Navigation">
+        <div class="nav-brand" onclick="goHome()" role="button" tabindex="0" aria-label="Go to Homepage">
+            <div class="nav-logo-box"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="LivXow Logo" width="45" height="45"></div>
             <div class="brand-name">Liv<span>Xow</span></div>
         </div>
-        <div style="font-size: 22px; color: #fff;"><i class="fas fa-bars"></i></div>
+        <div style="font-size: 22px; color: #fff;" role="button" aria-label="Menu"><i class="fas fa-bars"></i></div>
     </nav>
 
-    <div class="container">
+    <main>
         
         <!-- ============ HOME SECTION ============ -->
-        <div id="home-section">
-            <div class="main-logo-box"><img src="logo.jpg" class="main-logo-img" alt="Main Logo" fetchpriority="high"></div>
-            <!-- Global No.1 as requested -->
+        <div id="home-section" class="fade-in">
+            <!-- Hero Section -->
+            <div class="main-logo-box">
+                <img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" class="main-logo-img" alt="LivXow Main Logo" width="150" height="150" fetchpriority="high">
+            </div>
+            
             <h1><span class="highlight">LivXow</span> – Global No.1 Live Sports App</h1>
             <p class="short-desc">Experience the thrill of the game without limits. Watch live cricket, football leagues, and global sports events in Ultra HD quality with zero buffering.</p>
             <div class="meta-info">
@@ -266,7 +303,7 @@
                 <span><i class="fas fa-file-download"></i> 15 MB</span>
             </div>
             
-            <div class="download-btn" onclick="openDownloadPage()">
+            <div class="download-btn" onclick="openDownloadPage()" role="button" tabindex="0" aria-label="Go to Download Page">
                 <i class="fas fa-download"></i> Download APK
             </div>
 
@@ -275,26 +312,25 @@
                 <p>For anyone who wants to enjoy non-stop, free cricket streaming and live sports events, there is no better choice. LivXow provides a unique, buffer-free environment that makes watching your favorite matches easier.</p>
             </div>
 
-            <div class="info-box-home">
-                <h2>What is LivXow?</h2>
+            <section class="info-box-home" aria-labelledby="about-heading">
+                <h2 id="about-heading">What is LivXow?</h2>
                 <p>
                     LivXow stands as one of the premier choices for Android users seeking free, high-quality live sports streaming. While famous for its extensive cricket coverage, it doesn't stop there. Users can dive into a world of diverse sports entertainment including Football leagues, WWE events, Rugby, and other popular global sports.
                 </p>
                 <p>
                     Built with a user-first approach, the app offers a clean, intuitive interface that eliminates navigation hassles. We prioritize your viewing experience by ensuring zero pop-up ads and delivering streams in crystal-clear HD. Plus, our smart adaptive technology adjusts to your internet speed, ensuring smooth playback on any Android device.
                 </p>
-            </div>
+            </section>
 
             <!-- APK DETAILS CARD -->
-            <div class="apk-details-card">
+            <section class="apk-details-card" aria-label="APK Technical Details">
                 <div class="apk-details-header">LivXow APK Details</div>
                 <div class="apk-details-sub">Get all the technical information about the latest version.</div>
 
                 <div class="details-logo-wrap">
-                    <img src="logo.jpg" alt="Logo">
+                    <img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="LivXow Icon" width="80" height="80" loading="lazy">
                 </div>
                 <div class="detail-row"><span class="d-label">App Name:</span><span class="d-val">LivXow</span></div>
-                <!-- Developer Option Preserved -->
                 <div class="detail-row"><span class="d-label">Developer:</span><span class="d-val">LivXow.site</span></div>
                 <div class="detail-row"><span class="d-label">Version:</span><span class="d-val badge-ver">v2.1</span></div>
                 <div class="detail-row"><span class="d-label">File Size:</span><span class="d-val">15 MB</span></div>
@@ -303,14 +339,14 @@
                 <div class="detail-row"><span class="d-label">Pricing:</span><span class="d-val badge-free">Free</span></div>
                 <div class="detail-row"><span class="d-label">Last Updated:</span><span class="d-val">February 24, 2025</span></div>
                 
-                <div class="btn-centered-blue" onclick="openDownloadPage()">
+                <div class="btn-centered-blue" onclick="openDownloadPage()" role="button" tabindex="0" aria-label="Download Latest Version">
                     Download Latest Version <i class="fas fa-download" style="margin-left:8px;"></i>
                 </div>
-            </div>
+            </section>
 
             <!-- WHAT'S NEW SECTION -->
-            <div class="wn-container">
-                <div class="wn-header">What’s New in v2.1</div>
+            <section class="wn-container" aria-labelledby="new-heading">
+                <h2 id="new-heading" class="wn-header">What’s New in v2.1</h2>
                 <div class="wn-sub">This latest version brings significant improvements and new features.</div>
 
                 <div class="wn-card">
@@ -334,11 +370,11 @@
                     <div class="safety-title">Safety First:</div>
                     <div class="safety-text">Always download from trusted sources. Our APK is 100% safe, virus-free, and tested on multiple devices.</div>
                 </div>
-            </div>
+            </section>
 
             <!-- HOME PAGE INSTALL GUIDE -->
-            <div class="home-install-guide">
-                <h2 class="hig-title">How To Download And Install LivXow APK</h2>
+            <section class="home-install-guide" aria-labelledby="install-heading">
+                <h2 id="install-heading" class="hig-title">How To Download And Install LivXow APK</h2>
                 <p class="hig-desc">Downloading and installing LivXow on any Android device is easy and straightforward. All you need to do is follow the detailed steps below:</p>
 
                 <div class="hig-step">
@@ -360,18 +396,18 @@
                     <div class="hig-step-title">4. Launch</div>
                     <div class="hig-step-text">Open the app, grant necessary permissions, and start streaming your favorite content.</div>
                 </div>
-            </div>
+            </section>
 
-            <!-- EXPLORE CATEGORIES -->
-            <div class="explore-section">
-                <h2 class="explore-title">Explore <span class="highlight">Categories</span></h2>
+            <!-- EXPLORE CATEGORIES - UPDATED LINKS -->
+            <section class="explore-section" aria-labelledby="explore-heading">
+                <h2 id="explore-heading" class="explore-title">Explore <span class="highlight">Categories</span></h2>
                 <p class="explore-desc">
                     Navigate through organized content sections to find exactly what you want to watch. Everything is placed in easy-to-access categories.
                 </p>
 
                 <!-- 1. Live Events -->
                 <div class="explore-card">
-                    <img src="https://i.ibb.co/3yY7mrts/1000309615.jpg" alt="Live Events" class="explore-img">
+                    <img src="Live.jpg" alt="Live Sports Events" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">Live Events</h3>
                     <p class="ec-text">
                         Catch every moment as it happens. Stream live matches from major leagues like IPL, ICC, EPL, and WWE directly on your device without interruptions.
@@ -380,7 +416,7 @@
 
                 <!-- 2. Sports Channel -->
                 <div class="explore-card">
-                    <img src="https://i.ibb.co/TqwPy7H3/1000309618.jpg" alt="Channels" class="explore-img">
+                    <img src="Sports.jpg" alt="Sports Channels List" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">Sports Channels</h3>
                     <p class="ec-text">
                         Access a vast library of premium sports networks. Watch 24/7 live coverage from Star Sports, Sony Ten, Sky Sports, Willow TV, and more.
@@ -389,7 +425,7 @@
 
                 <!-- 3. Highlights -->
                 <div class="explore-card">
-                    <img src="https://i.ibb.co/S4433zxm/1000309622.jpg" alt="Highlights" class="explore-img">
+                    <img src="Highlight.jpg" alt="Match Highlights" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">Highlights</h3>
                     <p class="ec-text">
                         Missed the game? No problem. Catch up on key moments, wickets, goals, and match summaries with our extensive highlights section available anytime.
@@ -398,17 +434,17 @@
 
                 <!-- 4. World TV -->
                 <div class="explore-card">
-                    <img src="https://i.ibb.co/pBh1ZPNj/1000309623.jpg" alt="World TV" class="explore-img">
+                    <img src="World.jpg" alt="World TV Channels" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">World TV</h3>
                     <p class="ec-text">
                         Go beyond sports. Explore a wide range of international TV channels covering news, entertainment, and movies from around the globe.
                     </p>
                 </div>
-            </div>
+            </section>
 
             <!-- PREMIUM FEATURES -->
-            <div class="features-section">
-                <h2 class="pf-title">Premium Features of <span class="highlight">LivXow</span></h2>
+            <section class="features-section" aria-labelledby="features-heading">
+                <h2 id="features-heading" class="pf-title">Premium Features of <span class="highlight">LivXow</span></h2>
                 <p class="pf-desc">Experience the ultimate sports streaming app with features that rival premium services, all completely free of charge.</p>
 
                 <div class="pf-card">
@@ -440,11 +476,11 @@
                     <h3>Built-in VPN</h3>
                     <p>Enhanced privacy and reduced buffering with integrated VPN technology for secure streaming.</p>
                 </div>
-            </div>
+            </section>
 
             <!-- PROS AND CONS -->
-            <div class="pros-cons-container">
-                <h2 class="pc-title">Pros <span>and</span> Cons</h2>
+            <section class="pros-cons-container" aria-labelledby="pros-cons-heading">
+                <h2 id="pros-cons-heading" class="pc-title">Pros <span>and</span> Cons</h2>
                 <p class="pc-desc">While it’s an outstanding app, there are downsides and upsides about the app that should be mentioned.</p>
 
                 <div class="pros-box">
@@ -462,50 +498,48 @@
                     <div class="pc-item"><i class="fas fa-times-circle"></i> <span>Doesn’t comply with Google Play Protect policies</span></div>
                     <div class="pc-item"><i class="fas fa-times-circle"></i> <span>Not available on Google Play Store</span></div>
                 </div>
-            </div>
+            </section>
 
             <!-- FAQ SECTION -->
-            <div class="faq-section">
-                <h2 class="faq-header">Frequently Asked <span>Questions</span></h2>
+            <section class="faq-section" aria-labelledby="faq-heading">
+                <h2 id="faq-heading" class="faq-header">Frequently Asked <span>Questions</span></h2>
                 <p class="faq-desc">Find answers to common questions about installation, features, and troubleshooting.</p>
 
                 <div class="faq-item">
-                    <button class="faq-question">Is LivXow free? <i class="fas fa-plus"></i></button>
+                    <button class="faq-question" aria-expanded="false">Is LivXow free? <i class="fas fa-plus"></i></button>
                     <div class="faq-answer"><p>Yes, LivXow APK is completely free to download and use. You don't need any subscription or registration to enjoy all features.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Is it available on Google Play Store? <i class="fas fa-plus"></i></button>
+                    <button class="faq-question" aria-expanded="false">Is it available on Google Play Store? <i class="fas fa-plus"></i></button>
                     <div class="faq-answer"><p>Currently, there is no official version of LivXow available on the Play Store. You need to download the APK directly from our website.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Is it safe to download? <i class="fas fa-plus"></i></button>
+                    <button class="faq-question" aria-expanded="false">Is it safe to download? <i class="fas fa-plus"></i></button>
                     <div class="faq-answer"><p>Yes, the app is 100% safe. We verify all files for viruses and malware before hosting them. Always download from our official page.</p></div>
                 </div>
 
-                <!-- Added New FAQ 1 -->
                 <div class="faq-item">
-                    <button class="faq-question">What devices are compatible? <i class="fas fa-plus"></i></button>
+                    <button class="faq-question" aria-expanded="false">What devices are compatible? <i class="fas fa-plus"></i></button>
                     <div class="faq-answer"><p>LivXow is compatible with all Android devices running version 5.0 or higher, including Smartphones, Tablets, Android TV, FireStick, and Smart Boxes.</p></div>
                 </div>
 
-                <!-- Added New FAQ 2 -->
                 <div class="faq-item">
-                    <button class="faq-question">Does it require internet connection? <i class="fas fa-plus"></i></button>
+                    <button class="faq-question" aria-expanded="false">Does it require internet connection? <i class="fas fa-plus"></i></button>
                     <div class="faq-answer"><p>Yes, since it is a live streaming app, you need a stable internet connection (Wi-Fi or Mobile Data) to watch content in HD quality without buffering.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">Can I cast to other screens? <i class="fas fa-plus"></i></button>
+                    <button class="faq-question" aria-expanded="false">Can I cast to other screens? <i class="fas fa-plus"></i></button>
                     <div class="faq-answer"><p>Absolutely! The app supports Chromecast and screen mirroring, allowing you to watch live sports on your Smart TV or PC.</p></div>
                 </div>
 
                 <div class="faq-item">
-                    <button class="faq-question">How to fix 'Unexpected Error'? <i class="fas fa-plus"></i></button>
+                    <button class="faq-question" aria-expanded="false">How to fix 'Unexpected Error'? <i class="fas fa-plus"></i></button>
                     <div class="faq-answer"><p>If you face this error, try clearing the app cache, checking your internet connection, or using the built-in VPN to switch servers.</p></div>
                 </div>
-            </div>
+            </section>
 
             <!-- CONCLUSION BOX -->
             <div class="conclusion-box">
@@ -518,16 +552,16 @@
             </div>
 
             <!-- TESTIMONIALS SECTION -->
-            <div class="testimonials-section">
-                <h2 class="testi-header">What Our <span>Users Say</span></h2>
+            <section class="testimonials-section" aria-labelledby="testi-heading">
+                <h2 id="testi-heading" class="testi-header">What Our <span>Users Say</span></h2>
                 <p class="testi-desc">Join over 1 million users who trust LivXow for their sports streaming needs. Here’s what real users are saying about their experience.</p>
 
-                <!-- Review 1 (Existing) -->
+                <!-- Review 1 -->
                 <div class="testi-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="stars" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testi-text">"Outstanding app! I’ve been using LivXow for 6 months now and it’s simply the best cricket streaming app. The HD quality is amazing and no ads interrupting matches. Built-in VPN works perfectly!"</p>
                     <div class="user-profile">
-                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User" class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User Avatar" class="user-img" width="50" height="50" loading="lazy">
                         <div class="user-info">
                             <h4 class="user-name">Rajesh Kumar</h4>
                             <p class="user-device">Samsung Galaxy S21</p>
@@ -535,12 +569,12 @@
                     </div>
                 </div>
 
-                <!-- Review 2 (Existing) -->
+                <!-- Review 2 -->
                 <div class="testi-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    <div class="stars" aria-label="5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testi-text">"Finally found a reliable cricket streaming app that actually works! Live IPL matches stream smoothly without any buffering. The multi-language commentary feature is a game changer."</p>
                     <div class="user-profile">
-                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User" class="user-img">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User Avatar" class="user-img" width="50" height="50" loading="lazy">
                         <div class="user-info">
                             <h4 class="user-name">Priya Sharma</h4>
                             <p class="user-device">OnePlus 9</p>
@@ -548,12 +582,12 @@
                     </div>
                 </div>
 
-                <!-- Review 3 (Existing) -->
+                <!-- Review 3 -->
                 <div class="testi-card">
-                    <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
+                    <div class="stars" aria-label="4.5 out of 5 stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-alt"></i></div>
                     <p class="testi-text">"Been searching for a free cricket app for ages. LivXow delivers exactly what it promises – live cricket, football, WWE and more. Installation was super easy following the guide."</p>
                     <div class="user-profile">
-                        <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="User" class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/86.jpg" alt="User Avatar" class="user-img" width="50" height="50" loading="lazy">
                         <div class="user-info">
                             <h4 class="user-name">Mohammed Ali</h4>
                             <p class="user-device">Redmi Note 12</p>
@@ -566,7 +600,7 @@
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testi-text">"Absolutely brilliant! Watching the Premier League from London without any glitch. The picture quality is top-notch and the channel selection is massive."</p>
                     <div class="user-profile">
-                        <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="User" class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/11.jpg" alt="User Avatar" class="user-img" width="50" height="50" loading="lazy">
                         <div class="user-info">
                             <h4 class="user-name">James Wilson</h4>
                             <p class="user-device">Pixel 7 Pro - UK</p>
@@ -579,7 +613,7 @@
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testi-text">"Muy bien application! Perfect for watching La Liga matches. It works smoothly on my Android TV box with zero buffering. Highly recommended!"</p>
                     <div class="user-profile">
-                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User" class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="User Avatar" class="user-img" width="50" height="50" loading="lazy">
                         <div class="user-info">
                             <h4 class="user-name">Mateo Garcia</h4>
                             <p class="user-device">Xiaomi TV Box - Spain</p>
@@ -592,7 +626,7 @@
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testi-text">"Finally a way to catch WWE and UFC events live without paying huge subscriptions. Great job team, streaming quality is fantastic here in NYC!"</p>
                     <div class="user-profile">
-                        <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="User" class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/33.jpg" alt="User Avatar" class="user-img" width="50" height="50" loading="lazy">
                         <div class="user-info">
                             <h4 class="user-name">David Brown</h4>
                             <p class="user-device">Samsung S23 Ultra - USA</p>
@@ -605,14 +639,14 @@
                     <div class="stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
                     <p class="testi-text">"Khub sundor app! BPL ar World Cup er jonno best. Gramer barite bosheo HD te khela dekhte parchi kono buffering charai. Thanks LivXow!"</p>
                     <div class="user-profile">
-                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User" class="user-img">
+                        <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="User Avatar" class="user-img" width="50" height="50" loading="lazy">
                         <div class="user-info">
                             <h4 class="user-name">Tanvir Ahmed</h4>
                             <p class="user-device">Vivo V27 - Bangladesh</p>
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
             <!-- STATS COUNTER -->
             <div class="stats-grid">
@@ -634,11 +668,11 @@
                 </div>
             </div>
 
-            <!-- FOOTER FOR HOME PAGE (FIXED) -->
+            <!-- FIXED FOOTER (HOME) -->
             <footer>
                 <div class="footer-content">
                     <div class="footer-brand">
-                        <div class="f-logo"><img src="logo.jpg" alt="Logo"></div>
+                        <div class="f-logo"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="Footer Logo" width="35" height="35" loading="lazy"></div>
                         <div class="f-brand-name">Liv<span>Xow</span></div>
                     </div>
                     
@@ -655,21 +689,17 @@
                     <div class="footer-bottom">
                         <p class="copyright">© 2026 LivXow. All rights reserved.</p>
                         <div class="social-icons">
-                            <a href="https://t.me/sptv00"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://t.me/sptv00"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="https://t.me/sptv00"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://t.me/sptv00" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://t.me/sptv00" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="https://t.me/sptv00" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
             </footer>
-
-            <!-- Footer Padding -->
-            <div style="height: 50px;"></div>
-
         </div>
 
         <!-- ============ DOWNLOAD PAGE (HIDDEN INITIALLY) ============ -->
-        <div id="download-section">
+        <div id="download-section" class="fade-in">
             <h1 class="download-heading">Download <span class="title-gold">LivXow</span></h1>
             <p class="sub-text">Get the latest version of LivXow and enjoy unlimited live sports streaming on all your devices.</p>
 
@@ -678,7 +708,7 @@
                 <div class="card-title">Android APK</div>
                 <div class="card-sub">Compatible with Android 5.0 and above</div>
                 <!-- Fallback link in case JS fails -->
-                <a href="https://www.dropbox.com/scl/fi/ufhihy440wk6aehaj5sg5/Sportify_TV.apk?rlkey=62gdgnnzi5ewxs6r9w489mhsf&st=py4ccxo8&dl=1" class="card-btn">
+                <a href="https://www.dropbox.com/scl/fi/ufhihy440wk6aehaj5sg5/Sportify_TV.apk?rlkey=62gdgnnzi5ewxs6r9w489mhsf&st=py4ccxo8&dl=1" class="card-btn" aria-label="Download APK File">
                     <i class="fas fa-download"></i> Download LivXow APK
                 </a>
                 <div class="version-info">Version 2.1 • 15 MB</div>
@@ -696,7 +726,7 @@
                 <div class="note-text">For Android 8.0+, you'll see an <b>“Allow from this source”</b> prompt. Simply tap <b>“Allow”</b> when installing the APK.</div>
             </div>
             <div class="install-white-card">
-                <div class="ig-main-icon"><img src="logo.jpg" alt="Logo"></div>
+                <div class="ig-main-icon"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="Installation Icon" width="80" height="80" loading="lazy"></div>
                 <div class="ig-heading">How to Download &<br>Install LivXow APK?</div>
                 <div class="step-row">
                     <div class="step-left"><div class="step-num-circle">01<span class="step-num-label">APK</span></div><div class="step-arrow"><i class="fas fa-arrow-down"></i></div></div>
@@ -750,17 +780,17 @@
                 <div class="help-title">Need Help?</div>
                 <p class="help-desc">Our support team is here to help.</p>
                 <div class="help-buttons">
-                    <div class="btn-primary-small" onclick="goHome()">Contact Support</div>
+                    <div class="btn-primary-small" onclick="goHome()" role="button" tabindex="0">Contact Support</div>
                 </div>
             </div>
             
-            <div style="margin-top: 30px; color: #888; cursor: pointer; text-decoration: underline;" onclick="goHome()">&larr; Back to Home</div>
+            <div style="margin-top: 30px; color: #888; cursor: pointer; text-decoration: underline;" onclick="goHome()" role="button" tabindex="0">&larr; Back to Home</div>
 
-            <!-- FOOTER FOR DOWNLOAD PAGE (FIXED - IDENTICAL TO HOME) -->
+            <!-- FIXED FOOTER (DOWNLOAD) -->
             <footer>
                 <div class="footer-content">
                     <div class="footer-brand">
-                        <div class="f-logo"><img src="logo.jpg" alt="Logo"></div>
+                        <div class="f-logo"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="Footer Logo" width="35" height="35" loading="lazy"></div>
                         <div class="f-brand-name">Liv<span>Xow</span></div>
                     </div>
                     
@@ -777,86 +807,97 @@
                     <div class="footer-bottom">
                         <p class="copyright">© 2026 LivXow. All rights reserved.</p>
                         <div class="social-icons">
-                            <a href="https://t.me/sptv00"><i class="fab fa-facebook-f"></i></a>
-                            <a href="https://t.me/sptv00"><i class="fab fa-telegram-plane"></i></a>
-                            <a href="https://t.me/sptv00"><i class="fab fa-tiktok"></i></a>
+                            <a href="https://t.me/sptv00" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                            <a href="https://t.me/sptv00" aria-label="Telegram"><i class="fab fa-telegram-plane"></i></a>
+                            <a href="https://t.me/sptv00" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
                         </div>
                     </div>
                 </div>
             </footer>
         </div>
 
-    </div>
+    </main>
 
-    <!-- Script for FAQ and Page Switching -->
-    <script>
-        function openDownloadPage() {
-            document.getElementById('home-section').style.display = 'none';
-            document.getElementById('download-section').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
+    <!-- Optimized Script Loading -->
+    <script defer>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial history state
+            window.history.replaceState({page: 'home'}, 'Home', '');
 
-        function goHome() {
-            document.getElementById('download-section').style.display = 'none';
-            document.getElementById('home-section').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
+            window.openDownloadPage = function() {
+                document.getElementById('home-section').style.display = 'none';
+                document.getElementById('download-section').style.display = 'block';
+                window.scrollTo(0, 0);
+                window.history.pushState({page: 'download'}, 'Download', '#download');
+            };
 
-        // FAQ Toggle Logic
-        const faqs = document.querySelectorAll('.faq-question');
-        faqs.forEach(faq => {
-            faq.addEventListener('click', () => {
-                faq.classList.toggle('active');
-                const answer = faq.nextElementSibling;
-                if (faq.classList.contains('active')) {
-                    answer.style.maxHeight = answer.scrollHeight + 'px';
+            window.goHome = function() {
+                document.getElementById('download-section').style.display = 'none';
+                document.getElementById('home-section').style.display = 'block';
+                window.scrollTo(0, 0);
+                window.history.pushState({page: 'home'}, 'Home', ' ');
+            };
+
+            // Handle Back Button Logic
+            window.onpopstate = function(event) {
+                if (event.state && event.state.page === 'download') {
+                    document.getElementById('home-section').style.display = 'none';
+                    document.getElementById('download-section').style.display = 'block';
                 } else {
-                    answer.style.maxHeight = 0;
+                    document.getElementById('download-section').style.display = 'none';
+                    document.getElementById('home-section').style.display = 'block';
+                }
+            };
+
+            // FAQ Toggle Logic
+            const faqs = document.querySelectorAll('.faq-question');
+            faqs.forEach(faq => {
+                faq.addEventListener('click', () => {
+                    const isExpanded = faq.getAttribute('aria-expanded') === 'true';
+                    faq.setAttribute('aria-expanded', !isExpanded);
+                    faq.classList.toggle('active');
+                    const answer = faq.nextElementSibling;
+                    if (faq.classList.contains('active')) {
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        answer.style.maxHeight = 0;
+                    }
+                });
+            });
+
+            // Dynamic Link Fetch
+            async function fetchDownloadLink() {
+                const jsonUrl = "https://raw.githubusercontent.com/sptvhelpdesk-ship-it/Apk-link/refs/heads/main/data.json";
+                try {
+                    const response = await fetch(jsonUrl);
+                    const data = await response.json();
+                    if(data.link) {
+                        const downloadBtn = document.querySelector('.card-btn');
+                        if(downloadBtn) {
+                            downloadBtn.href = data.link;
+                        }
+                    }
+                } catch (error) {
+                    console.error("Link fetch error, using fallback.");
+                }
+            }
+            fetchDownloadLink();
+
+            // Adsterra Logic
+            const adLink = "https://www.effectivegatecpm.com/w6q9i150y?key=4b08b19ec61654084667a37e370d6f99";
+            let adReady = true;
+            const cooldownTime = 180000;
+
+            document.addEventListener('click', function(e) {
+                if (adReady) {
+                    window.open(adLink, '_blank');
+                    adReady = false;
+                    setTimeout(() => {
+                        adReady = true;
+                    }, cooldownTime);
                 }
             });
         });
-
-        // ============ DYNAMIC DOWNLOAD LINK FETCHING ============
-        async function fetchDownloadLink() {
-            const jsonUrl = "https://raw.githubusercontent.com/sptvhelpdesk-ship-it/Apk-link/refs/heads/main/data.json";
-            try {
-                const response = await fetch(jsonUrl);
-                const data = await response.json();
-                if(data.link) {
-                    // Update the specific download button inside download section
-                    const downloadBtn = document.querySelector('.card-btn');
-                    if(downloadBtn) {
-                        downloadBtn.href = data.link;
-                    }
-                }
-            } catch (error) {
-                console.error("Link fetch error, using fallback.");
-            }
-        }
-        // Run fetch immediately on load
-        window.addEventListener('DOMContentLoaded', fetchDownloadLink);
-
-
-        // Adsterra + Back Press Logic
-        const adLink = "https://www.effectivegatecpm.com/w6q9i150y?key=4b08b19ec61654084667a37e370d6f99";
-        let adReady = true;
-        const cooldownTime = 180000; // 3 Minutes
-
-        document.addEventListener('click', function(e) {
-            if (adReady) {
-                window.open(adLink, '_blank');
-                adReady = false;
-                setTimeout(() => {
-                    adReady = true;
-                }, cooldownTime);
-            }
-        });
-
-        // Back Press Logic (History API)
-        window.history.pushState(null, null, window.location.href);
-        window.onpopstate = function () {
-            window.history.pushState(null, null, window.location.href);
-        };
     </script>
 
 </body>
