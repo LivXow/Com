@@ -16,7 +16,6 @@
     <meta property="og:url" content="https://livxow.site/">
     <meta property="og:title" content="LivXow - Global No.1 Live Sports App">
     <meta property="og:description" content="Download LivXow APK. Watch Live Sports, Cricket & Football in HD with Zero Buffering.">
-    <!-- Using local image for OG if available, otherwise keeping external fallback -->
     <meta property="og:image" content="https://i.ibb.co/6R9b0nm0/1000341018.jpg">
 
     <!-- Twitter -->
@@ -30,7 +29,7 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <!-- Preload Critical Assets -->
-    <link rel="preload" as="image" href="https://i.ibb.co/6R9b0nm0/1000341018.jpg" fetchpriority="high">
+    <link rel="preload" as="image" href="logo.jpg" fetchpriority="high">
     
     <!-- Optimized Font Loading (Async) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,13 +120,23 @@
         .hig-step-title { font-size: 16px; font-weight: 700; color: #FFD700; margin-bottom: 8px; }
         .hig-step-text { font-size: 14px; color: #ccc; line-height: 1.6; }
 
-        /* Explore Categories - UPDATED */
+        /* Explore Categories - FIXED */
         .explore-section { margin-top: 50px; text-align: center; }
         .explore-title { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 15px; }
         .explore-desc { font-size: 14px; color: #aaa; margin-bottom: 30px; line-height: 1.6; padding: 0 10px; }
         .explore-card { background: #111; border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 20px; padding: 30px 20px; box-shadow: 0 10px 30px rgba(0,0,0,0.5); max-width: 400px; margin: 0 auto 30px auto; transition: transform 0.3s ease; }
-        /* Added object-fit: cover to prevent image squashing */
-        .explore-img { width: 100%; height: auto; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.5); margin-bottom: 25px; border: 1px solid #333; aspect-ratio: 16/9; object-fit: cover; }
+        
+        /* === IMAGE FIX: Width 100% and Height Auto to prevent cropping === */
+        .explore-img { 
+            width: 100%; 
+            height: auto; 
+            border-radius: 15px; 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5); 
+            margin-bottom: 25px; 
+            border: 1px solid #333; 
+            display: block; 
+        }
+        
         .ec-title { font-size: 24px; font-weight: 700; color: #fff; margin-bottom: 15px; }
         .ec-text { font-size: 14px; color: #ccc; line-height: 1.6; text-align: left; }
 
@@ -280,7 +289,7 @@
     <!-- Navbar -->
     <nav class="navbar" role="navigation" aria-label="Main Navigation">
         <div class="nav-brand" onclick="goHome()" role="button" tabindex="0" aria-label="Go to Homepage">
-            <div class="nav-logo-box"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="LivXow Logo" width="45" height="45"></div>
+            <div class="nav-logo-box"><img src="logo.jpg" alt="LivXow Logo" width="45" height="45"></div>
             <div class="brand-name">Liv<span>Xow</span></div>
         </div>
         <div style="font-size: 22px; color: #fff;" role="button" aria-label="Menu"><i class="fas fa-bars"></i></div>
@@ -292,7 +301,7 @@
         <div id="home-section" class="fade-in">
             <!-- Hero Section -->
             <div class="main-logo-box">
-                <img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" class="main-logo-img" alt="LivXow Main Logo" width="150" height="150" fetchpriority="high">
+                <img src="logo.jpg" class="main-logo-img" alt="LivXow Main Logo" width="150" height="150" fetchpriority="high">
             </div>
             
             <h1><span class="highlight">LivXow</span> – Global No.1 Live Sports App</h1>
@@ -328,7 +337,7 @@
                 <div class="apk-details-sub">Get all the technical information about the latest version.</div>
 
                 <div class="details-logo-wrap">
-                    <img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="LivXow Icon" width="80" height="80" loading="lazy">
+                    <img src="logo.jpg" alt="LivXow Icon" width="80" height="80" loading="lazy">
                 </div>
                 <div class="detail-row"><span class="d-label">App Name:</span><span class="d-val">LivXow</span></div>
                 <div class="detail-row"><span class="d-label">Developer:</span><span class="d-val">LivXow.site</span></div>
@@ -398,7 +407,7 @@
                 </div>
             </section>
 
-            <!-- EXPLORE CATEGORIES - UPDATED LINKS -->
+            <!-- EXPLORE CATEGORIES - LINKS FIXED WITH CAPITAL LETTERS -->
             <section class="explore-section" aria-labelledby="explore-heading">
                 <h2 id="explore-heading" class="explore-title">Explore <span class="highlight">Categories</span></h2>
                 <p class="explore-desc">
@@ -407,6 +416,7 @@
 
                 <!-- 1. Live Events -->
                 <div class="explore-card">
+                    <!-- Updated to Live.jpg (Capital L) -->
                     <img src="Live.jpg" alt="Live Sports Events" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">Live Events</h3>
                     <p class="ec-text">
@@ -416,6 +426,7 @@
 
                 <!-- 2. Sports Channel -->
                 <div class="explore-card">
+                    <!-- Updated to Sports.jpg (Capital S) -->
                     <img src="Sports.jpg" alt="Sports Channels List" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">Sports Channels</h3>
                     <p class="ec-text">
@@ -425,6 +436,7 @@
 
                 <!-- 3. Highlights -->
                 <div class="explore-card">
+                    <!-- Using Highlight.jpg (Check if file exists and Case matches!) -->
                     <img src="Highlight.jpg" alt="Match Highlights" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">Highlights</h3>
                     <p class="ec-text">
@@ -434,6 +446,7 @@
 
                 <!-- 4. World TV -->
                 <div class="explore-card">
+                    <!-- Updated to World.jpg (Capital W) -->
                     <img src="World.jpg" alt="World TV Channels" class="explore-img" width="360" height="200" loading="lazy">
                     <h3 class="ec-title">World TV</h3>
                     <p class="ec-text">
@@ -672,7 +685,7 @@
             <footer>
                 <div class="footer-content">
                     <div class="footer-brand">
-                        <div class="f-logo"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="Footer Logo" width="35" height="35" loading="lazy"></div>
+                        <div class="f-logo"><img src="logo.jpg" alt="Footer Logo" width="35" height="35" loading="lazy"></div>
                         <div class="f-brand-name">Liv<span>Xow</span></div>
                     </div>
                     
@@ -726,7 +739,7 @@
                 <div class="note-text">For Android 8.0+, you'll see an <b>“Allow from this source”</b> prompt. Simply tap <b>“Allow”</b> when installing the APK.</div>
             </div>
             <div class="install-white-card">
-                <div class="ig-main-icon"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="Installation Icon" width="80" height="80" loading="lazy"></div>
+                <div class="ig-main-icon"><img src="logo.jpg" alt="Installation Icon" width="80" height="80" loading="lazy"></div>
                 <div class="ig-heading">How to Download &<br>Install LivXow APK?</div>
                 <div class="step-row">
                     <div class="step-left"><div class="step-num-circle">01<span class="step-num-label">APK</span></div><div class="step-arrow"><i class="fas fa-arrow-down"></i></div></div>
@@ -790,7 +803,7 @@
             <footer>
                 <div class="footer-content">
                     <div class="footer-brand">
-                        <div class="f-logo"><img src="https://i.ibb.co/6R9b0nm0/1000341018.jpg" alt="Footer Logo" width="35" height="35" loading="lazy"></div>
+                        <div class="f-logo"><img src="logo.jpg" alt="Footer Logo" width="35" height="35" loading="lazy"></div>
                         <div class="f-brand-name">Liv<span>Xow</span></div>
                     </div>
                     
